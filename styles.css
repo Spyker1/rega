@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2e2e2e;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 10px;
+}
+
+.title {
+    color: #ff6ec7;
+    font-size: 2.5em;
+    animation: fadeIn 2s ease;
+}
+
+.message {
+    color: #fff;
+    font-size: 1.2em;
+    margin: 20px 0;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.message:hover {
+    transform: scale(1.1);
+    color: #ff6ec7;
+}
+
+.hidden {
+    display: none;
+}
+
+.celebrate-btn {
+    background-color: #ff6ec7;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.celebrate-btn:hover {
+    background-color: #ff1493;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
