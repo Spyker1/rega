@@ -17,6 +17,7 @@ body {
     padding: 20px 40px;
     border-radius: 15px;
     max-width: 500px;
+    width: 90%;
 }
 
 .title {
@@ -101,4 +102,36 @@ body {
     transform: rotate(45deg);
     animation: float 3s infinite ease-in-out;
     opacity: 0.8;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2em;
+    }
+    .message {
+        font-size: 1em;
+        padding: 8px;
+    }
+    .celebrate-btn {
+        font-size: 1em;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px 20px;
+    }
+    .title {
+        font-size: 1.8em;
+    }
+    .message {
+        font-size: 0.9em;
+        padding: 6px;
+    }
+    .celebrate-btn {
+        font-size: 0.9em;
+        padding: 6px 12px;
+    }
 }
