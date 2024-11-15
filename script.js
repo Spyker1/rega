@@ -1,16 +1,18 @@
-// Mostrar mensajes paso a paso
+// Mostrar mensajes uno por uno sin ocultar los anteriores
 function showMessage(nextMessage) {
-    if (nextMessage <= 3) {
-        document.getElementById("message" + nextMessage).classList.toggle("hidden");
+    const message = document.getElementById("message" + nextMessage);
+    if (message) {
+        message.classList.remove("hidden");
     }
 }
 
-// Confetti efecto de celebración
+// Efecto de confeti con límite de tiempo
 function celebrate() {
     const confettiCanvas = document.getElementById("confetti");
-    confettiCanvas.width = window.innerWidth;
-    confettiCanvas.height = window.innerHeight;
     const context = confettiCanvas.getContext("2d");
+
+    confettiCanvas.width = confettiCanvas.parentElement.offsetWidth;
+    confettiCanvas.height = confettiCanvas.parentElement.offsetHeight;
 
     const confettiPieces = Array.from({ length: 100 }, () => ({
         x: Math.random() * confettiCanvas.width,
@@ -33,8 +35,11 @@ function celebrate() {
             if (p.y > confettiCanvas.height) p.y = 0;
             if (p.x > confettiCanvas.width) p.x = 0;
         });
-        requestAnimationFrame(animateConfetti);
+        // Animación limitada a 3 segundos para evitar acumulación
+        setTimeout(() => cancelAnimationFrame(animationId), 3000);
+        var animationId = requestAnimationFrame(animateConfetti);
     }
+
     animateConfetti();
 }
 
