@@ -9,11 +9,19 @@
 <body>
     <div class="container">
         <h1 class="title">¡Feliz Cumpleaños, Mamá!</h1>
-        <p class="message" onclick="showSecondMessage()">Eres la mejor mamá del mundo, siempre me inspiras con tu amor y fortaleza. ❤️</p>
-        <p class="message hidden" id="secondMessage">¡Gracias por todo lo que haces! Te mereces un día lleno de alegría. 🌹</p>
-        <button onclick="celebrate()" class="celebrate-btn">Haz clic para celebrar 🎉</button>
+        
+        <!-- Mensajes de cumpleaños -->
+        <div class="message-box">
+            <p class="message" onclick="showMessage(1)">🌹 Para la mujer más fuerte y amorosa de mi vida 🌹</p>
+            <p class="message hidden" id="message1" onclick="showMessage(2)">Gracias por cada abrazo, por cada palabra de aliento, y por tu amor incondicional. 🥰</p>
+            <p class="message hidden" id="message2" onclick="showMessage(3)">Eres mi inspiración diaria, la razón por la que sonrío y quiero ser mejor. 💪💖</p>
+            <p class="message hidden" id="message3" onclick="showMessage(4)">Hoy celebro no solo tu cumpleaños, sino todo lo hermoso que eres. Te quiero mucho. 🌸💕</p>
+        </div>
+
+        <button onclick="celebrate()" class="celebrate-btn">¡Celebrar contigo! 🎉</button>
         <canvas id="confetti"></canvas>
     </div>
+    <div id="heart-container"></div>
     <script src="script.js"></script>
 </body>
 </html>

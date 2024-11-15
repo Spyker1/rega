@@ -1,16 +1,17 @@
-// Show second message on click
-function showSecondMessage() {
-    document.getElementById("secondMessage").classList.toggle("hidden");
+// Mostrar mensajes paso a paso
+function showMessage(nextMessage) {
+    if (nextMessage <= 3) {
+        document.getElementById("message" + nextMessage).classList.toggle("hidden");
+    }
 }
 
-// Confetti effect for celebration
+// Confetti efecto de celebración
 function celebrate() {
     const confettiCanvas = document.getElementById("confetti");
     confettiCanvas.width = window.innerWidth;
     confettiCanvas.height = window.innerHeight;
     const context = confettiCanvas.getContext("2d");
 
-    // Array to store confetti pieces
     const confettiPieces = Array.from({ length: 100 }, () => ({
         x: Math.random() * confettiCanvas.width,
         y: Math.random() * confettiCanvas.height,
@@ -20,7 +21,6 @@ function celebrate() {
         color: `hsl(${Math.random() * 360}, 100%, 50%)`
     }));
 
-    // Animate confetti
     function animateConfetti() {
         context.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
         confettiPieces.forEach(p => {
@@ -35,6 +35,15 @@ function celebrate() {
         });
         requestAnimationFrame(animateConfetti);
     }
-
     animateConfetti();
+}
+
+// Crear corazones flotantes
+const heartContainer = document.getElementById("heart-container");
+for (let i = 0; i < 20; i++) {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.style.left = `${Math.random() * 100}vw`;
+    heart.style.animationDuration = `${Math.random() * 2 + 3}s`;
+    heartContainer.appendChild(heart);
 }
